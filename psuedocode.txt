@@ -19,6 +19,8 @@ musix match - 5464ca2cbd521f1a5f5f69cb8b0d199d
 Spotify API Key Client ID 8090d82c1bc840b398c6bdd0d00fdd85
 email address: columbiabootcamp116@gmail.com, pw: columbia116, user name: gixrbeimosdhuny0lfo281gio birthday: 3/28/99
 
+youtube api key: AIzaSyCVJ-QB7Mymmu1PgKh4ng-aOgsAzBigA6w
+
 
 important stuff:
 
@@ -50,7 +52,7 @@ if either conditions are met current score becomes final score
 
 nice to have:
 allow user to input initials to attach to their final score
-display initials and score on a leaderboard if they make it to the top 5 scores 
+display initials and score on a leaderboard if they make it to the top 5 scores
 
 COUNTERS
 lives counter - starts at 5 - goes down for every incorrect guess of song titles
