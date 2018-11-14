@@ -1,0 +1,66 @@
+START PAGE LOGIC
+
+important stuff:
+TITLE - Party like it's 1999
+Display how to play instructions in div
+start game button
+start game button on click - page switches to game
+
+nice to have:
+overall high scores
+
+
+
+
+GAME PAGE LOGIC
+API keys:
+musix match - 5464ca2cbd521f1a5f5f69cb8b0d199d
+
+Spotify API Key Client ID 8090d82c1bc840b398c6bdd0d00fdd85
+email address: columbiabootcamp116@gmail.com, pw: columbia116, user name: gixrbeimosdhuny0lfo281gio birthday: 3/28/99
+
+youtube api key: AIzaSyCVJ-QB7Mymmu1PgKh4ng-aOgsAzBigA6w
+
+
+important stuff:
+
+THIS GETS OUR LYRICS TO THE PAGE
+create array containing titles of our songs
+create url query variables
+loop through song array for search query
+use ajax and the url query to get the songs json from musix match
+**the following depends on what musix match allows for**
+grab a snippet of lyrics from the song and store it in an an array
+we need to figure out how to make each word become its own index in the array
+another for loop to cycle through the array and start appending the lyrics to the page
+
+GAME LOGIC:
+user inputs a song title and submits
+take the value of the user input - ignore case, ignore spacing, ignore punctuation - check if the value exists in our song array
+if it exists AND the timer is 0-15 seconds - add 100 points to current score, stop timer - display youtube video of song - a button is created allowing user to go to next song when they are done enjoying
+else if it exists AND the timer is 15-30 seconds - add 50 points to current score, stop timer - play song from spotify - a button is created allowing user to go to next song when they are done enjoying
+else if it does not exist - no points added, timer stops, lives counter goes down by 1, go to next song immedietly
+
+when next song question starts - timer reset to 30 - go to next song in array
+
+
+
+game end conditions:
+if live counter reaches zero - load end screen
+if user answer all 20 songs - load end screen
+if either conditions are met current score becomes final score
+
+nice to have:
+allow user to input initials to attach to their final score
+display initials and score on a leaderboard if they make it to the top 5 scores
+
+COUNTERS
+lives counter - starts at 5 - goes down for every incorrect guess of song titles
+timer - starts at 30 seconds - goes down every second until 0
+current score - starts at 0 - goes up by 100 if answer is guessed in 0-15 seconds goes up by 50 if answer is guessed in 15-30 seconds
+
+
+
+
+
+END PAGE LOGIC
