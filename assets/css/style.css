@@ -1,0 +1,14 @@
+.header-image {
+    background-image: url("retro.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+
+.footer{
+    padding: 2.0rem 2.0rem 2.0rem !important;
+    background-color: black !important;
+    
+}
