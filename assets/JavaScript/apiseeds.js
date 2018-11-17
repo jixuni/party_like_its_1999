@@ -35,5 +35,6 @@ $(document).ready(function () {
             var short = lyrics.substr(50, 200);
             console.log(short);
         });
+        // slkdjfklsdjfklsjfklsjflksdjfk
 });
 
