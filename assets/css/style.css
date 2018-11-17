@@ -142,10 +142,11 @@ h1 span:nth-child(13),h1 span:nth-child(13)::before{
 
 }
 
-/* #imageBox{
-    background:rgba(0,0,0,0.0);
-    border: transparent;
-} */
+@media screen and (min-width: 1088px){
+.container {
+    width: 116px !important;
+}
+}
 #bodyImage{
     align-self: center !important;
     width: 300px;
