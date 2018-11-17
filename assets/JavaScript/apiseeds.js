@@ -1,5 +1,3 @@
-$(document).ready(function () {
-
     var lyrics = [
         "backstreet%20boys/i%20want%20it%20that%20way",
         "britney%20spears/baby%20one%20more%20time",
@@ -24,17 +22,19 @@ $(document).ready(function () {
     ];
 
     let randomSong = Math.floor(Math.random() * lyrics.length);
-    let currentSongInPlay = lyrics[randomSong]; 
+    let currentSongInPlay = lyrics[randomSong];
+    var songAnswer;
+
 
     var queryURL = "https://orion.apiseeds.com/api/music/lyric/" + currentSongInPlay + "?apikey=97klSgiv5iiHy19EgaFdvZbAFytE7q8pmJcgcoTHMQXlsP0xfpI1FS0neTSg4Ea3";;
         $.ajax({
             url: queryURL,
             method: "GET"
         }).then(function (result) {
+          console.log(result);
             var lyrics = result.result.track.text;
             var short = lyrics.substr(50, 200);
+             songAnswer = result.result.track.name;
             console.log(short);
         });
         // slkdjfklsdjfklsjfklsjflksdjfk
-});
-
