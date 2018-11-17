@@ -215,7 +215,21 @@ h1 span:nth-child(13),h1 span:nth-child(13)::before{
 
 }
 
-
+/* #gameHtmlData {
+    
+    width: 200px;
+    top: 200px;
+   
+}
+#gameHtmlBody {
+    float: left;
+    
+}
+#gameHtmlBtn {
+    float: left;
+    width: 300px;
+    
+} */
 
 .footer{
     padding: 2.0rem 2.0rem 2.0rem !important;
