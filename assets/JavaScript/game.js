@@ -5,7 +5,7 @@
   //global game variables
   var userGuess;
   var timer = 30;
-  var lives = 5;
+  var lives = ["&#127908","&#127908","&#127908","&#127908","&#127908",];
   var score = 0;
 
   //function to stop the timer
@@ -20,15 +20,15 @@
     if (typeof songAnswer !== 'undefined') {
       $("#timerDisplay").text(timer);
       $("#scoreDisplay").text(score);
-      $("#livesDisplay").text(lives);
+      $("#livesDisplay").html("lives" +lives.join(""));
       timer--;
       console.log("We playing the song: " + songAnswer);
       console.log(timer);
       if (timer <= 0) {
         alert("Time up!");
         clearTime();
-        lives--;
-        $("#livesDisplay").text(lives);
+        lives.pop();
+        $("#livesDisplay").html("lives" +lives.join(""));
         console.log(lives);
       }
     }
@@ -56,8 +56,8 @@
       clearTime();
       console.log(score);
     } else if (userGuess.toLowerCase() != songAnswer.toLowerCase()) {
-      lives--;
-      $("#livesDisplay").text(lives);
+      lives.pop();
+      $("#livesDisplay").html("lives" +lives.join(""));
       clearTime();
       console.log(lives);
     }
