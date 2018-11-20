@@ -42,13 +42,30 @@ function getSong() {
         var lyrics = result.result.track.text;
         var short = lyrics.substr(50, 200);
         songAnswer = result.result.track.name;
-        $("#gameHtmlBody").text(short);
-        console.log("hello" + short);
+
+        var splitted = short.split(" ");
+
+        //Loop through each word and set a 700 mil sec delay
+        for (i = 0; i < splitted.length; i++) {
+            (function (i) {
+                setTimeout(function () {
+                    $("#gameHtmlBody").append(splitted[i]);
+                }, 700 * i);
+            })(i);
+
+          
+            
+        };
+
     });
 
     lyrics.splice(randomSong, 1);
     console.log(lyrics);
+
 };
 
-
-        // slkdjfklsdjfklsjfklsjflksdjfk
+// This is just achieve code in case we need to use this syntax instead of the one above
+// var spans = '<span>' + str.split(/\s+/).join(' </span><span>') + '</span>';
+            // $(spans).hide().appendTo($("#gameHtmlBody")).each(function (i) {
+            //     $(this).delay(2000 * i).fadeIn();
+            // });
