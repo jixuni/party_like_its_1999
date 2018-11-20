@@ -69,7 +69,7 @@
   //timer will only start when the variable songAnswer is not undefined (this variable is from apiseeds.js) so i set it songAnswer to undefined when getting the next song so the timer doesn't prematurially start - or so i though...it still starts - see time left function
   function nextSong() {
     songAnswer = 'undefined';
-    var timerRun = setInterval(timeLeft, 1000)
+    timerRun = setInterval(timeLeft, 1000)
     clearTime();
     getSong();
     timeLeft();
