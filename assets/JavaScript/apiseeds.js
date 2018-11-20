@@ -49,8 +49,8 @@ function getSong() {
         for (i = 0; i < splitted.length; i++) {
             (function (i) {
                 setTimeout(function () {
-                    $("#gameHtmlBody").append(splitted[i]);
-                }, 700 * i);
+                    $("#gameHtmlBody").hide().append(splitted[i]+ " ").fadeIn("slow");
+                }, 1000 * i);
             })(i);
 
           
