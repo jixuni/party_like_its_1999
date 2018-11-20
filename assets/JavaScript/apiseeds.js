@@ -21,20 +21,30 @@
         "next/too%20close",
     ];
 
-    let randomSong = Math.floor(Math.random() * lyrics.length);
-    let currentSongInPlay = lyrics[randomSong];
     var songAnswer;
 
+    function getSong(){
+      let randomSong = Math.floor(Math.random() * lyrics.length);
+      let currentSongInPlay = lyrics[randomSong];
 
-    var queryURL = "https://orion.apiseeds.com/api/music/lyric/" + currentSongInPlay + "?apikey=97klSgiv5iiHy19EgaFdvZbAFytE7q8pmJcgcoTHMQXlsP0xfpI1FS0neTSg4Ea3";;
-        $.ajax({
-            url: queryURL,
-            method: "GET"
-        }).then(function (result) {
-          console.log(result);
-            var lyrics = result.result.track.text;
-            var short = lyrics.substr(50, 200);
-             songAnswer = result.result.track.name;
-            console.log(short);
-        });
+
+
+      var queryURL = "https://orion.apiseeds.com/api/music/lyric/" + currentSongInPlay + "?apikey=97klSgiv5iiHy19EgaFdvZbAFytE7q8pmJcgcoTHMQXlsP0xfpI1FS0neTSg4Ea3";;
+          $.ajax({
+              url: queryURL,
+              method: "GET"
+          }).then(function (result) {
+            console.log(result);
+              var lyrics = result.result.track.text;
+              var short = lyrics.substr(50, 200);
+               songAnswer = result.result.track.name;
+               $("#lyricDisplay").text(short);
+              console.log(short);
+          });
+
+          lyrics.splice(randomSong, 1);
+          console.log(lyrics);
+    };
+
+
         // slkdjfklsdjfklsjfklsjflksdjfk

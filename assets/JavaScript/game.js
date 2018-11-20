@@ -1,60 +1,84 @@
-
+//still needed:
+//need function to stop apending lyrics - call when timer hits 0, when user enter correct answer, when user enters incorrect
+//need fucntion to play song when user gets the correct answer
 
   //global game variables
-  var currentSong = "Rahat";
   var userGuess;
-  var timer = 33;
+  var timer = 30;
   var lives = 5;
   var score = 0;
 
   //function to stop the timer
   function clearTime() {
     clearInterval(timerRun);
+    timer = 30;
   }
 
 
-  //actual timer function which stops when it hits 0
+  //actual timer function starts when apiseeds gets a song then stops at 0
   function timeLeft() {
-    timer--;
-    console.log("We playing the song: " + songAnswer);
-    console.log(timer);
-    if (timer <= 0) {
-      alert("Time up!");
-      clearTime();
-      lives--;
-      console.log(lives);
+    if (typeof songAnswer !== 'undefined') {
+      $("#timerDisplay").text(timer);
+      $("#scoreDisplay").text(score);
+      $("#livesDisplay").text(lives);
+      timer--;
+      console.log("We playing the song: " + songAnswer);
+      console.log(timer);
+      if (timer <= 0) {
+        alert("Time up!");
+        clearTime();
+        lives--;
+        $("#livesDisplay").text(lives);
+        console.log(lives);
+      }
     }
-  }
+
+  };
 
 
   //interval for timer
   var timerRun = setInterval(timeLeft, 1000)
 
   //called the funciton so it can start running once the page loads
+  getSong();
   timeLeft();
 
   //function to check answers and add to score or lose a life
   function answerCheck() {
     if (userGuess.toLowerCase() == songAnswer.toLowerCase() && timer >= 15) {
       score = score + 100;
+      $("#scoreDisplay").text(score);
       clearTime();
       console.log(score);
     } else if (userGuess.toLowerCase() == songAnswer.toLowerCase() && timer < 15) {
       score = score + 50;
+      $("#scoreDisplay").text(score);
       clearTime();
       console.log(score);
     } else if (userGuess.toLowerCase() != songAnswer.toLowerCase()) {
       lives--;
+      $("#livesDisplay").text(lives);
       clearTime();
       console.log(lives);
     }
 
   };
 
-  //need funcction to go to next song - call when user enters wrong value - or is done playing the song
-  //need function to stop apending lyrics - call when timer hits 0, when user enter correct answer, when user enters incorrect
-  //need fucntion to play song when user gets the correct answer
-  //n
+
+  //function to play next song or alert end game
+
+  function nextSong(){
+  if (lyrics!== []) {
+    clearTime();
+    timer = 30;
+    //i had to put this in here again to get it to work
+    var timerRun = setInterval(timeLeft, 1000)
+    getSong();
+    timeLeft();
+  } else if (lyrics == []) {
+    alert("The game has ended! Your final score is: " + score + ". Refresh to play again!")
+  }
+  };
 
   //click funciton for guess - sets the userguess variable equal to whatever the user put in
   $("#guess").click(function(e) {
@@ -62,4 +86,12 @@
     userGuess = $("#userInput").val().trim();
     console.log(userGuess);
     answerCheck();
+    $("#userInput").val('');
+    clearTime();
+  });
+
+  //go to next song function
+
+  $("#nextSongTest").click(function(){
+    nextSong();
   });
