@@ -66,21 +66,18 @@
 
 
   //function to play next song or alert end game
-
-  function nextSong(){
-  if (lyrics!== []) {
-    clearTime();
-    timer = 30;
-    //i had to put this in here again to get it to work
+  //timer will only start when the variable songAnswer is not undefined (this variable is from apiseeds.js) so i set it songAnswer to undefined when getting the next song so the timer doesn't prematurially start - or so i though...it still starts - see time left function
+  function nextSong() {
+    songAnswer = 'undefined';
     var timerRun = setInterval(timeLeft, 1000)
+    clearTime();
     getSong();
     timeLeft();
-  } else if (lyrics == []) {
-    alert("The game has ended! Your final score is: " + score + ". Refresh to play again!")
-  }
   };
 
   //click funciton for guess - sets the userguess variable equal to whatever the user put in
+
+
   $("#guess").click(function(e) {
     e.preventDefault();
     userGuess = $("#userInput").val().trim();
@@ -92,6 +89,6 @@
 
   //go to next song function
 
-  $("#nextSongTest").click(function(){
+  $("#next").click(function(){
     nextSong();
   });

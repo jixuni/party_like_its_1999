@@ -38,7 +38,7 @@
               var lyrics = result.result.track.text;
               var short = lyrics.substr(50, 200);
                songAnswer = result.result.track.name;
-               $("#lyricDisplay").text(short);
+               $("#gameHtmlBody").text(short);
               console.log(short);
           });
 
