@@ -291,6 +291,10 @@ h1 span:nth-child(13),h1 span:nth-child(13)::before{
     }
 }
 
+#guessBox {
+    margin-top: 100px;
+}
+
 .footer{
     padding: 2.0rem 2.0rem 2.0rem !important;
     background-color: black !important;
