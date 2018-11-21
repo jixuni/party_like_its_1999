@@ -44,7 +44,7 @@ function getSong() {
         songAnswer = result.result.track.name;
 
         var splitted = short.split(" ");
-        $("#gameHtmlBody").empty();
+
         //Loop through each word and set a 700 mil sec delay
         for (i = 0; i < splitted.length; i++) {
             (function (i) {
@@ -53,8 +53,8 @@ function getSong() {
                 }, 1000 * i);
             })(i);
 
-
-
+          
+            
         };
 
     });
