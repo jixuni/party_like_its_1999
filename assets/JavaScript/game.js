@@ -12,7 +12,14 @@
   function clearTime() {
     clearInterval(timerRun);
     timer = 30;
-  }
+  };
+
+  //function to check if no lives are left
+  function micdrop() {
+    if (lives.length === 0) {
+      alert("You have lost all of your lives, your final score is: " + score + ". Refresh to play again")
+    }
+  };
 
 
   //actual timer function starts when apiseeds gets a song then stops at 0
@@ -28,10 +35,11 @@
         alert("Time up!");
         clearTime();
         lives.pop();
+        micdrop();
         $("#livesDisplay").html("lives" +lives.join(""));
         console.log(lives);
       }
-    } else if (lyrics.length = 0) {
+    } else if (lyrics.length === 0) {
       alert("The game is over! Your final score is: " + score + ". Please refresh to play again!")
     }
 
@@ -62,6 +70,7 @@
       $("#livesDisplay").html("lives" +lives.join(""));
       clearTime();
       console.log(lives);
+      micdrop();
     }
 
   };
