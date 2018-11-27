@@ -24,6 +24,7 @@ var lyrics = [
 var songAnswer;
 
 function getSong() {
+
     let randomSong = Math.floor(Math.random() * lyrics.length);
     let currentSongInPlay = lyrics[randomSong];
 
