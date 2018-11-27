@@ -340,11 +340,7 @@ h1 span:nth-child(30),h1 span:nth-child(30)::before{
     }
 }
 
-#guessBox {
-    
-    position: fixed;
-    width: 440px;
-}
+
 
 .footer{
     padding: 2.0rem 2.0rem 2.0rem !important;

@@ -54,7 +54,7 @@
             </div>
         </div>
 
-
+        
 
         <div class="columns">
             <div class="column is-full has-text-centered" id="musicNotes">
@@ -69,7 +69,7 @@
         </div>
 
         <div class="hero-body ">
-            <div class="container has-text-centered ">
+            <div class="container has-text-centered is-mobile">
                     <h2 class="title has-text-white has-text-centered">
                         Party 1999!
                     </h2>
@@ -98,7 +98,7 @@
                         <h2 class="subtitle has-text-white" id="gameHtmlBody">
                                
                         </h2>
-                        <div class="box" id="guessBox">
+                        <div class="box" id="guessBox 6">
                             <div class="field is-grouped">
                                 <p class="control is-expanded">
                                     <input class="input" type="text" placeholder="Song Title" id="userInput">
@@ -114,9 +114,17 @@
 
 
                         <div class="column is-2" id="gameHtmlBtn">
-                                <button class="startBtn" id="life1">
-                                    Lifeline 1 
-                                </button>
+                                <a class="startBtn" id="life1">Lifeline 1</a>
+                                <div class="modal" id="page-modal">
+                                    <div class="modal-background"></div>
+                                    <div class="modal-content">
+                                        <div class="notification is-danger" id="hint">
+                                            
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+
                                 <br>
                                 <button class="startBtn" id="life2">
                                     Lifeline 2 
@@ -131,12 +139,13 @@
                                 </button>
                         </div>
 
-                        <p>helllooooo</p>
+                        
 
                 </div>
             </div>
         </div>
-
+        
+        
 
         <footer class="footer">
             <div class="content has-text-centered has-text-white">
@@ -155,6 +164,7 @@
     <script type="text/javascript" src="http://tracking.musixmatch.com/t1.0/AMa6hJCIEzn1v8RuOP"> </script>
     <script src="assets/JavaScript/apiseeds.js"></script>
     <script src="assets/JavaScript/game.js"></script>
+    <script src="assets/JavaScript/last_fm.js"></script>
 
     </body>
 </html>
