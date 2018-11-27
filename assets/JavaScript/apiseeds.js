@@ -27,11 +27,11 @@ function getSong() {
     let randomSong = Math.floor(Math.random() * lyrics.length);
     let currentSongInPlay = lyrics[randomSong];
 
-    $.ajaxPrefilter(function (options) {
-        if (options.crossDomain && jQuery.support.cors) {
-            options.url = 'https://cors-anywhere.herokuapp.com/' + queryURL;
-        }
-    });
+    // $.ajaxPrefilter(function (options) {
+    //     if (options.crossDomain && jQuery.support.cors) {
+    //         options.url = 'https://cors-anywhere.herokuapp.com/' + queryURL;
+    //     }
+    // });
 
     var queryURL = "https://orion.apiseeds.com/api/music/lyric/" + currentSongInPlay + "?apikey=97klSgiv5iiHy19EgaFdvZbAFytE7q8pmJcgcoTHMQXlsP0xfpI1FS0neTSg4Ea3";;
     $.ajax({
