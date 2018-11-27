@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    
+
     var artistSong = [
         "&artist=backstreet%20boys&track=i%20want%20it%20that%20way",
         "&artist=britney%20spears&track=baby%20one%20more%20time",
@@ -26,50 +28,66 @@ $(document).ready(function () {
     function getHint() {
         let randomArtistSong = Math.floor(Math.random() * artistSong.length);
         let currentHint = artistSong[randomArtistSong];
-
-        var apiKey = "534ab8ba3d2f73b71b396ba12659d8b6"
+        console.log(currentHint);
+        var apiKey = "534ab8ba3d2f73b71b396ba12659d8b6";
         var queryURL = "http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key="
-            + apiKey + currentHint + "&format=json"
+            + apiKey + currentHint + "&format=json";
 
-        console.log(queryURL)
+        console.log(queryURL);
 
         $.ajax({
             url: queryURL,
-            method: "GET"
-        }).then(function (response) {
+            method: "GET",
+        }).then(function(response) {
+            console.log(response)
+            
+            var modal = document.getElementById('page-modal');
+            
+
 
             $("#life1").click(function () {
                 //Gives Artist Hint and prints to HTML
                 var artistHint = response.track.album.artist;
-                const getArtistHint = document.getElementById("artist hint");
-                getArtistHint.textContent = artistHint;
+                
+                modal.style.display = 'block';
+                $("#hint").html("artist name is " + "<strong>" + artistHint + "</strong>" );
             });
 
             $("#life2").click(function () {
                 //Gives Genre Hint and prints to HTML
                 var genreHint = response.track.toptags.tag[0].name
-                const getGenreHint = document.getElementById("genre hint");
-                getGenreHint.textContent = genreHint;
+                
+                modal.style.display = 'block';
+                $("#hint").html("Song genre " + "<strong>" + genreHint + "</strong>" );
             });
 
-            ("#life3").click(function () {
+            $("#life3").click(function () {
                 //Get Album Cover Hint and displays to HTML
                 var albumCover = response.track.album.image[3]["#text"]
-
+                
+                modal.style.display = 'block';
                 var x = document.createElement("IMG");
                 x.setAttribute("src", albumCover);
-                x.setAttribute("width", "300");
-                x.setAttribute("height", "300");
                 x.setAttribute("alt", "N");
                 x.setAttribute("id", "album hint");
-                document.body.appendChild(x);
+                $("#hint").html(x);
+
             });
+
+            // click anywhere in the modal screen to close it.
+            window.onclick = function(event){
+                if(event.target.className == "modal-background"){
+                    modal.style.display = "none";
+                }
+            }
 
         });
 
     };
 
     getHint()
+
+    
 
 });
 
