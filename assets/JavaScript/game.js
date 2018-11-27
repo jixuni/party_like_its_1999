@@ -60,11 +60,13 @@
       $("#scoreDisplay").text(score);
       clearTime();
       console.log(score);
+      alert("That's right! The answer is " + songAnswer + ". You can learn more about the song here:" + answerURL +". Click next to continue");
     } else if (userGuess.toLowerCase() == songAnswer.toLowerCase() && timer < 15) {
       score = score + 50;
       $("#scoreDisplay").text(score);
       clearTime();
       console.log(score);
+      alert("That's right! The answer is " + songAnswer + ". You can learn more about the song here:" + answerURL +". Click next to continue");
     } else if (userGuess.toLowerCase() != songAnswer.toLowerCase()) {
       lives.pop();
       $("#livesDisplay").html("lives" +lives.join(""));
