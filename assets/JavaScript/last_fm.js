@@ -51,6 +51,7 @@
 
                 modal.style.display = 'block';
                 $("#hint").html("artist name is " + "<strong>" + artistHint + "</strong>" );
+                $("#life1").remove();
             });
 
             $("#life2").click(function () {
@@ -59,6 +60,7 @@
 
                 modal.style.display = 'block';
                 $("#hint").html("Song genre " + "<strong>" + genreHint + "</strong>" );
+                $("#life2").remove();
             });
 
             $("#life3").click(function () {
@@ -71,7 +73,7 @@
                 x.setAttribute("alt", "N");
                 x.setAttribute("id", "album hint");
                 $("#hint").html(x);
-
+                $("#life3").remove();
             });
 
             // click anywhere in the modal screen to close it.
