@@ -7,7 +7,7 @@
   var timer = 30;
   var lives = ["&#127908","&#127908","&#127908","&#127908","&#127908",];
   var score = 0;
-
+  var modals = document.getElementById('page-modal');
   //function to stop the timer
   function clearTime() {
     clearInterval(timerRun);
@@ -17,7 +17,8 @@
   //function to check if no lives are left
   function micdrop() {
     if (lives.length === 0) {
-      alert("You have lost all of your lives, your final score is: " + score + ". Refresh to play again")
+      modals.style.display = "block";
+      $("#hint").html("You have lost all of your lives, your final score is: " + score + ". Refresh to play again");
     }
   };
 
@@ -32,7 +33,8 @@
       console.log("We playing the song: " + songAnswer);
       console.log(timer);
       if (timer <= 0) {
-        alert("Time up!");
+        modals.style.display = "block";
+        $("#hint").html("Time up!");
         clearTime();
         lives.pop();
         micdrop();
@@ -40,7 +42,8 @@
         console.log(lives);
       }
     } else if (lyrics.length === 0) {
-      alert("The game is over! Your final score is: " + score + ". Please refresh to play again!")
+        modals.style.display = "block";
+      $("#hint").html("The game is over! Your final score is: " + score + ". Please refresh to play again!");
     }
 
   };
@@ -60,17 +63,21 @@
       $("#scoreDisplay").text(score);
       clearTime();
       console.log(score);
-      alert("That's right! The answer is " + songAnswer + ". You can learn more about the song here:" + answerURL +". Click next to continue");
+      modals.style.display = "block";
+      $("#hint").html("That's right! The answer is " + songAnswer + ". You can learn more about the song here:" + answerURL +". Click next to continue");
     } else if (userGuess.toLowerCase() == songAnswer.toLowerCase() && timer < 15) {
       score = score + 50;
       $("#scoreDisplay").text(score);
       clearTime();
       console.log(score);
-      alert("That's right! The answer is " + songAnswer + ". You can learn more about the song here:" + answerURL +". Click next to continue");
+      modals.style.display = "block";
+      $("#hint").html("That's right! The answer is " + songAnswer + ". You can learn more about the song here:" + answerURL +". Click next to continue");
     } else if (userGuess.toLowerCase() != songAnswer.toLowerCase()) {
       lives.pop();
       $("#livesDisplay").html("lives" +lives.join(""));
       clearTime();
+      modals.style.display = "block";
+      $("#hint").html("Wrong guess, the answer is " + songAnswer);
       console.log(lives);
       micdrop();
     }

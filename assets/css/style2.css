@@ -340,7 +340,13 @@ h1 span:nth-child(30),h1 span:nth-child(30)::before{
     }
 }
 
+#next {
+    margin-top: 20px;
+}
 
+.notification {
+    margin-top: 20%;
+}
 
 .footer{
     padding: 2.0rem 2.0rem 2.0rem !important;
