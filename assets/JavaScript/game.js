@@ -138,8 +138,8 @@ $(document).ready(function () {
   var timerRun = setInterval(timeLeft, 1000)
 
   //called the funciton so it can start running once the page loads
-  // fetchData();
-  // timeLeft();
+  fetchData();
+  timeLeft();
 
   //function to check answers and add to score or lose a life
   function answerCheck() {
