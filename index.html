@@ -38,14 +38,66 @@
                 </h1>
             </div>
         </div>
+        
+        
+        <div class="modal" id="gameLogic">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+                <article class="message">
+                    <div class="message-header">
+                      <p>Game Instructions</p>
+                      
+                    </div>
+                    <div class="message-body">
+                            Party like its 1999!
 
+                            Game instructions
+                            
+                            Click start game below to begin!
+                            
+                            <ul style="list-style-type:circle">
+                                <li>A timer will begin and lyrics of a song that existed in 1999 will begin to display on the screen.</li>
+                                <li>Guess the title of the song and click “Guess” to submit your answer.</li>
+                                <li>You will get more points the faster you answer!</li>
+                                <li>Click on a lifeline if you are having trouble getting an answer</li>
+                                <li>Lifelines will show you on of the following: Artist Name, Song Genre, or Album cover.</li>
+                                <li>Lifelines will disappear after use, so use them wisely!</li>
+                                <li>The timer will still continue while you are viewing your hint from the lifeline, so be quick!</li>
+                                <li>Guessing correctly will unlock an information page where you can learn more about the song!</li>
+                            </ul>
 
+                    </div>
+                  </article>
+            </div>
+            
+          </div>
+        
         <div class="hero-body" id="bodyImage">
             <img src="assets/css/musicimage.jpg">
         </div>
+        
 
+        <div class="hero-body" id="instructionHero">
+            <div class="container has-text-centered">
+                <button class="startBtn" id="infoBtn">
+                    Instructions
+                </button>
+            </div>
+        </div>
 
-
+        <script>
+                var modal = document.getElementById("gameLogic");
+                document.getElementById("infoBtn").onclick = function (){
+                    modal.style.display = "block";
+                }
+                
+                window.onclick = function (event) {
+                    if (event.target.className == "modal-background") {
+                        modal.style.display = "none";
+                    }
+                }
+            
+            </script>
         <div class="hero-body">
             <div class="container has-text-centered">
                         <button onclick="window.location.href = 'game.html';" class="startBtn">Start Game
@@ -55,7 +107,8 @@
             </div>
 
         </div>
-
+        
+        
 
         <footer class="footer">
             <div class="content has-text-centered has-text-white">

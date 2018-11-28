@@ -291,11 +291,11 @@ h1 span:nth-child(13),h1 span:nth-child(13)::before{
     }
 }
 
-#guessBox {
-    
-    position: fixed;
-    width: 440px;
+#instructionHero {
+    padding-bottom: 0px;
 }
+
+
 
 .footer{
     padding: 2.0rem 2.0rem 2.0rem !important;
