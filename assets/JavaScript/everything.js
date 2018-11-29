@@ -293,6 +293,4 @@ function fetchData() {
     });
 };
 
-fetchData();
-
 });
