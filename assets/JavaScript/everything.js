@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    //global game variables 
+    //global game variables
     var userGuess;
     var timer = 30;
     var lives = ["&#127908", "&#127908", "&#127908", "&#127908", "&#127908",];
@@ -153,14 +153,25 @@ $(document).ready(function () {
             clearTime();
             console.log(score);
             modals.style.display = "block";
-            $("#hint").html("That's right! The answer is " + songAnswer + ". You can learn more about the song here:" + answerURL + ". Click next to continue");
+            $("#hint").html("That's right! The answer is " + songAnswer + ". Click next on the main game to continue or you can learn more about the song below: <br>");
+            $('<a>',{
+              text:songAnswer,
+              href:answerURL,
+              target: "_blank"
+            }).appendTo('#hint');
+
         } else if (userGuess.toLowerCase() == songAnswer.toLowerCase() && timer < 15) {
             score = score + 50;
             $("#scoreDisplay").text(score);
             clearTime();
             console.log(score);
             modals.style.display = "block";
-            $("#hint").html("That's right! The answer is " + songAnswer + ". You can learn more about the song here:" + answerURL + ". Click next to continue");
+            $("#hint").html("That's right! The answer is " + songAnswer + ". Click next on the main game to continue or you can learn more about the song below: <br>");
+            $('<a>',{
+              text:songAnswer,
+              href:answerURL,
+              target: "_blank"
+            }).appendTo('#hint');
         } else if (userGuess.toLowerCase() != songAnswer.toLowerCase()) {
             lives.pop();
             $("#livesDisplay").html("lives" + lives.join(""));
