@@ -11,6 +11,8 @@ The deployed game can be played here:
 
 https://jixuni.github.io/project_1-groupies-/
 
+Note: Our final compiled Javascript code exists on everything.js - other JS files are our work in progress where members worked on specific parts of the game.
+
 Game instructions
 
 Click start game below to begin!
