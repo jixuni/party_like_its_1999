@@ -205,7 +205,7 @@ function fetchData() {
 
     // Hint URL
     var apiKey = "534ab8ba3d2f73b71b396ba12659d8b6"
-    var artistSongURL = "http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=" + apiKey + selectedMusic.artistSong + "&format=json";
+    var artistSongURL = "https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=" + apiKey + selectedMusic.artistSong + "&format=json";
 
     // Lyrics URL
     var lyricsURL = "https://orion.apiseeds.com/api/music/lyric/" + selectedMusic.lyrics + "?apikey=97klSgiv5iiHy19EgaFdvZbAFytE7q8pmJcgcoTHMQXlsP0xfpI1FS0neTSg4Ea3";
