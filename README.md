@@ -1,5 +1,15 @@
 Party like its 1999! 
 
+A collaborative project by:
+
+Beth Sergeant: https://github.com/ersJava
+Jixu Nl: https://github.com/jixuni
+Xiao Heng Chen: https://github.com/MagiSeaCow
+Rahat Chowdhury: https://github.com/Rahat-ch
+
+The deployed game can be played here:
+
+https://jixuni.github.io/project_1-groupies-/
 
 Game instructions
 
