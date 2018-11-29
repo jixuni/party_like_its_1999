@@ -293,6 +293,6 @@ function fetchData() {
     });
 };
 
-fetchData();
-
 });
+
+//some changes
