@@ -1,4 +1,4 @@
-![Logo of the project](/assets/party1999.png) 
+![Logo of the project](/assets/party1999.png = 350x150) 
 
 # Party Like It's 1999!
 > Feeling nostalgic about the 90s? Test your music knowledge here! 
@@ -9,7 +9,7 @@ An interactive web browser game that dynamically displays the HTML with the jQue
 
 ## How It Works
 
-## Game Instructions
+### Game Instructions
 * A timer will begin and lyrics of a song that existed in 1999 will begin to display on the screen.
 
 * The user will try and guess the title of the song and submit their answer in the box below.
@@ -19,11 +19,7 @@ An interactive web browser game that dynamically displays the HTML with the jQue
 * Guessing correctly will unlock the information page with the music video, full song and lyrics, and photos of the Artist/Band. 
 
 ### Lifelines
-The user will be given 3 lifelines as hints if need some help guessing the song in the form of: 
-
-* Artist Name
-* Song Genre
-* Album Cover
+The user will be given 3 lifelines as hints if need some help guessing the song in the form of **Artist Name**, **Song Genre** and **Album Cover**.
 
 The user's lifelines will disappear after use and timer will not stop while viewing the hint.  
 
