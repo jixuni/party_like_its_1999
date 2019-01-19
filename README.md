@@ -1,34 +1,49 @@
-Party like its 1999! 
+![Logo of the project](/assets/party1999.png) 
 
-A collaborative project by:
-
-- Beth Sergeant: https://github.com/ersJava
-- Jixu Nl: https://github.com/jixuni
-- Xiao Heng Chen: https://github.com/MagiSeaCow
-- Rahat Chowdhury: https://github.com/Rahat-ch
-
-The deployed game can be played here:
+# Party Like It's 1999!
+> Feeling nostalgic about the 90s? Test your music knowledge here! 
 
 https://jixuni.github.io/project_1-groupies-/
 
-Technologies used: 
-- Html
-- CSS
-- Bulma Framework
-- Jquery
-- AJAX
+An interactive web browser game that dynamically displays the HTML with the jQuery library and pulls data from multiple APIs.
 
-Note: Our final compiled Javascript code exists on everything.js - other JS files are our work in progress where members worked on specific parts of the game.
+## How It Works
 
-Game instructions
+## Game Instructions
+* A timer will begin and lyrics of a song that existed in 1999 will begin to display on the screen.
 
-Click start game below to begin!
+* The user will try and guess the title of the song and submit their answer in the box below.
 
-- A timer will begin and lyrics of a song that existed in 1999 will begin to display on the screen.
-- Guess the title of the song and click “Guess” to submit your answer.
-- You will get more points the faster you answer! 
-- Click on a lifeline if you are having trouble getting an answer
-    - Lifelines will show you on of the following: Artist Name, Song Genre, or Album cover. 
-    - Lifelines will disappear after use, so use them wisely!
-    - The timer will still continue while you are viewing your hint from the lifeline, so be quick! 
-- Guessing correctly will unlock an information page where you can learn more about the song! 
+* The quicker the response the more points the user will receive.
+
+* Guessing correctly will unlock the information page with the music video, full song and lyrics, and photos of the Artist/Band. 
+
+### Lifelines
+The user will be given 3 lifelines as hints if need some help guessing the song in the form of: 
+
+* Artist Name
+* Song Genre
+* Album Cover
+
+The user's lifelines will disappear after use and timer will not stop while viewing the hint.  
+
+## Project Details
+
+### Collaboration By
+
+* Beth Sergeant: https://github.com/ersJava
+* Jixu Nl: https://github.com/jixuni
+* Xiao Heng Chen: https://github.com/MagiSeaCow
+* Rahat Chowdhury: https://github.com/Rahat-ch
+
+### Technologies Used
+* HTML5
+* CSS
+* Bulma Framework
+* jQuery
+* AJAX
+
+### APIs Used
+* Last FM 
+* API Seeds
+
