@@ -19,7 +19,7 @@ An interactive web browser game that dynamically displays the HTML with the jQue
 * Guessing correctly will unlock the information page with the music video, full song and lyrics, and photos of the Artist/Band. 
 
 ### Lifelines
-The user will be given 3 lifelines as hints if need some help guessing the song in the form of **Artist Name**, **Song Genre** and **Album Cover**.
+The user will be given 3 lifelines as hints in the form of **Artist Name**, **Song Genre** and **Album Cover**.
 
 The user's lifelines will disappear after use and timer will not stop while viewing the hint.  
 
