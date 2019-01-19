@@ -1,4 +1,4 @@
-![Logo of the project](/assets/party1999.png = 350x150) 
+![Logo of the project](https://github.com/assets/party1999.png  width="350" height="150") 
 
 # Party Like It's 1999!
 > Feeling nostalgic about the 90s? Test your music knowledge here! 
@@ -19,7 +19,7 @@ An interactive web browser game that dynamically displays the HTML with the jQue
 * Guessing correctly will unlock the information page with the music video, full song and lyrics, and photos of the Artist/Band. 
 
 ### Lifelines
-The user will be given 3 lifelines as hints in the form of **Artist Name**, **Song Genre** and **Album Cover**.
+The user will be given 3 lifelines as hints in the form of **artist name**, **song genre** and **album cover**.
 
 The user's lifelines will disappear after use and timer will not stop while viewing the hint.  
 
