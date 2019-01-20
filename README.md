@@ -1,4 +1,4 @@
-![Logo of the project](https://github.com/assets/party1999.png  width="350" height="150") 
+![Logo of the project](https://github.com/assets/party1999.png) 
 
 # Party Like It's 1999!
 > Feeling nostalgic about the 90s? Test your music knowledge here! 
