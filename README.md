@@ -1,4 +1,4 @@
-![Logo of the project](/assets/images/party1999.png) 
+![Logo of the project](/assets/images/party_logo.png) 
 
 # Party Like It's 1999!
 > Feeling nostalgic about the 90s? Test your music knowledge here! 
