@@ -1,14 +1,13 @@
 $(document).ready(function () {
-
     //global game variables
     var userGuess;
     var timer = 30;
-    var lives = ["&#127908", "&#127908", "&#127908", "&#127908", "&#127908",];
+    var lives = ["&#127908", "&#127908", "&#127908", "&#127908", "&#127908", ];
     var score = 0;
     var modals = document.getElementById('page-modal');
 
-    var music = [
-        {
+    // Song lyrics and hints array
+    var music = [{
             artistSong: "&artist=backstreet%20boys&track=i%20want%20it%20that%20way",
             lyrics: "backstreet%20boys/i%20want%20it%20that%20way",
         },
@@ -95,9 +94,9 @@ $(document).ready(function () {
 
     ]
 
+    // Game logic
     let randomIndex = Math.floor(Math.random() * music.length);
     let selectedMusic = music[randomIndex];
-
     var answerURL;
 
     //function to stop the timer
@@ -154,10 +153,10 @@ $(document).ready(function () {
             console.log(score);
             modals.style.display = "block";
             $("#hint").html("That's right! The answer is " + songAnswer + ". Click next on the main game to continue or you can learn more about the song below: <br>");
-            $('<a>',{
-              text:songAnswer,
-              href:answerURL,
-              target: "_blank"
+            $('<a>', {
+                text: songAnswer,
+                href: answerURL,
+                target: "_blank"
             }).appendTo('#hint');
 
         } else if (userGuess.toLowerCase() == songAnswer.toLowerCase() && timer < 15) {
@@ -167,10 +166,10 @@ $(document).ready(function () {
             console.log(score);
             modals.style.display = "block";
             $("#hint").html("That's right! The answer is " + songAnswer + ". Click next on the main game to continue or you can learn more about the song below: <br>");
-            $('<a>',{
-              text:songAnswer,
-              href:answerURL,
-              target: "_blank"
+            $('<a>', {
+                text: songAnswer,
+                href: answerURL,
+                target: "_blank"
             }).appendTo('#hint');
         } else if (userGuess.toLowerCase() != songAnswer.toLowerCase()) {
             lives.pop();
@@ -209,101 +208,96 @@ $(document).ready(function () {
         nextSong();
     });
 
-function fetchData() {
-    // Randomly choosing music with lyrics and hints matching
-    let randomIndex = Math.floor(Math.random() * music.length);
-    let selectedMusic = music[randomIndex];
+    function fetchData() {
+        // Randomly choosing music with lyrics and hints matching
+        let randomIndex = Math.floor(Math.random() * music.length);
+        let selectedMusic = music[randomIndex];
 
-    // Hint URL
-    var apiKey = "534ab8ba3d2f73b71b396ba12659d8b6"
-    var artistSongURL = "https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=" + apiKey + selectedMusic.artistSong + "&format=json";
+        // Hint URL
+        var apiKey = "534ab8ba3d2f73b71b396ba12659d8b6"
+        var artistSongURL = "https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=" + apiKey + selectedMusic.artistSong + "&format=json";
 
-    // Lyrics URL
-    var lyricsURL = "https://orion.apiseeds.com/api/music/lyric/" + selectedMusic.lyrics + "?apikey=97klSgiv5iiHy19EgaFdvZbAFytE7q8pmJcgcoTHMQXlsP0xfpI1FS0neTSg4Ea3";
+        // Lyrics URL
+        var lyricsURL = "https://orion.apiseeds.com/api/music/lyric/" + selectedMusic.lyrics + "?apikey=97klSgiv5iiHy19EgaFdvZbAFytE7q8pmJcgcoTHMQXlsP0xfpI1FS0neTSg4Ea3";
 
-    console.log("*****HINT: " + artistSongURL)
-    console.log("*****SONG:" + lyricsURL)
+        console.log("*****HINT: " + artistSongURL)
+        console.log("*****SONG:" + lyricsURL)
 
-    $.ajax({
-        url: artistSongURL,
-        method: "GET"
-    }).then(function (response) {
+        $.ajax({
+            url: artistSongURL,
+            method: "GET"
+        }).then(function (response) {
 
-        var modal = document.getElementById('page-modal');
+            var modal = document.getElementById('page-modal');
 
-        answerURL = response.track.url;
-        console.log(answerURL);
+            answerURL = response.track.url;
+            console.log(answerURL);
 
-        //Gives Artist Hint and prints to HTML
-        $("#life1").click(function () {
+            //Gives Artist Hint and prints to HTML
+            $("#life1").click(function () {
 
-            var artistHint = response.track.album.artist;
+                var artistHint = response.track.album.artist;
 
-            modal.style.display = 'block';
-            $("#hint").html("artist name is " + "<strong>" + artistHint + "</strong>");
-            $("#life1").remove();
-        });
+                modal.style.display = 'block';
+                $("#hint").html("artist name is " + "<strong>" + artistHint + "</strong>");
+                $("#life1").remove();
+            });
 
-        //Gives Genre Hint and prints to HTML
-        $("#life2").click(function () {
+            //Gives Genre Hint and prints to HTML
+            $("#life2").click(function () {
 
-            var genreHint = response.track.toptags.tag[0].name
+                var genreHint = response.track.toptags.tag[0].name
 
-            modal.style.display = 'block';
-            $("#hint").html("Song genre " + "<strong>" + genreHint + "</strong>");
-            $("#life2").remove();
-        });
+                modal.style.display = 'block';
+                $("#hint").html("Song genre " + "<strong>" + genreHint + "</strong>");
+                $("#life2").remove();
+            });
 
-        // Get Album Cover Hint and displays to HTML
-        $("#life3").click(function () {
+            // Get Album Cover Hint and displays to HTML
+            $("#life3").click(function () {
 
-            var albumCover = response.track.album.image[3]["#text"]
+                var albumCover = response.track.album.image[3]["#text"]
 
-            modal.style.display = 'block';
-            var x = document.createElement("IMG");
-            x.setAttribute("src", albumCover);
-            x.setAttribute("alt", "N");
-            x.setAttribute("id", "album hint");
-            $("#hint").html(x);
-            $("#life3").remove();
-        });
+                modal.style.display = 'block';
+                var x = document.createElement("IMG");
+                x.setAttribute("src", albumCover);
+                x.setAttribute("alt", "N");
+                x.setAttribute("id", "album hint");
+                $("#hint").html(x);
+                $("#life3").remove();
+            });
 
-        // click anywhere in the modal screen to close it.
-        window.onclick = function (event) {
-            if (event.target.className == "modal-background") {
-                modal.style.display = "none";
+            // click anywhere in the modal screen to close it.
+            window.onclick = function (event) {
+                if (event.target.className == "modal-background") {
+                    modal.style.display = "none";
+                }
             }
-        }
+        });
 
-    });
+        $.ajax({
+            url: lyricsURL,
+            method: "GET"
+        }).then(function (result) {
+            console.log(result);
+            var lyrics = result.result.track.text;
+            var short = lyrics.substr(50, 200);
+            songAnswer = result.result.track.name;
+            console.log(short);
 
-    $.ajax({
-        url: lyricsURL,
-        method: "GET"
-    }).then(function (result) {
-        console.log(result);
-        var lyrics = result.result.track.text;
-        var short = lyrics.substr(50, 200);
-        songAnswer = result.result.track.name;
-        console.log(short);
+            var splitted = short.split(" ");
+            $("#gameHtmlBody").empty();
 
-        var splitted = short.split(" ");
-        $("#gameHtmlBody").empty();
-
-        //Loop through each word and set a 700 mil sec delay
-        for (i = 0; i < splitted.length; i++) {
-            (function (i) {
-                setTimeout(function () {
-                    $("#gameHtmlBody").hide().append(splitted[i] + " ").fadeIn("slow");
-                }, 1000 * i);
-            })(i);
-
-        };
-        lyrics.splice(randomSong, 1);
-        console.log(lyrics);
-    });
-};
-
+            //Loop through each word and set a 700 mil sec delay
+            for (i = 0; i < splitted.length; i++) {
+                (function (i) {
+                    setTimeout(function () {
+                        $("#gameHtmlBody").hide().append(splitted[i] + " ").fadeIn("slow");
+                    }, 1000 * i);
+                })(i);
+            };
+            lyrics.splice(randomSong, 1);
+            console.log(lyrics);
+        });
+    };
 });
-
-//some changes
